@@ -96,7 +96,7 @@ export default function BigTransfer({ writeContracts, tx }) {
                   onClick={submitContract}
                   disabled={!fileUrl || !fileName || !fileDescription}
                 >
-                  Submit
+                  Add to llbrary
                 </Button>
               </>
             )}
