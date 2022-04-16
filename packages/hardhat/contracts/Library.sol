@@ -31,6 +31,7 @@ contract smartLibrary
     @notice Events to log public library
     */
     event PublicUpload(uint256 _pcount, string indexed _name, string _Link, string _description);
+    event Share(address sharer, string _filename, address _to);
     
 
     /*
@@ -83,6 +84,7 @@ contract smartLibrary
         
         userLib[_to[i]][_ID] = content(c.ID, c.name, c.Link, c.description);
         privlib[_to[i]].push(content(c.ID,c.name, c.Link,c.description));
+        emit Share(msg.sender, c.name, _to[i]);
         }
         return "shared";
     }
