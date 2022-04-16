@@ -82,6 +82,7 @@ contract smartLibrary
         require(_to[i] != address(0),"you cant share to zero address");
         
         userLib[_to[i]][_ID] = content(c.ID, c.name, c.Link, c.description);
+        privlib[_to[i]].push(content(c.ID,c.name, c.Link,c.description));
         }
         return "shared";
     }
